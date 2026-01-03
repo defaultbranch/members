@@ -29,8 +29,10 @@
 
   <properties>
     <java.version>25</java.version>
-    <kotlin.version>2.3</kotlin.version>
+    <kotlin.version>2.3.0</kotlin.version>
     <spring-boot.version>4.0.1</spring-boot.version>
+    <maven.compiler.release>${java.version}</maven.compiler.release>
+    <kotlin.compiler.jvmTarget>${java.version}</kotlin.compiler.jvmTarget>
   </properties>
 
   <dependencyManagement>
@@ -64,6 +66,27 @@
       <version>${kotlin.version}</version>
     </dependency>
 
+    <!-- Tests: Spring Boot test + Kotlin test on JUnit 5 -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.jetbrains.kotlin</groupId>
+      <artifactId>kotlin-test</artifactId>
+      <version>${kotlin.version}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.jetbrains.kotlin</groupId>
+      <artifactId>kotlin-test-junit5</artifactId>
+      <version>${kotlin.version}</version>
+      <scope>test</scope>
+    </dependency>
+
   </dependencies>
 
   <build>
@@ -72,6 +95,13 @@
     <testSourceDirectory>src/test/kotlin</testSourceDirectory>
 
     <plugins>
+
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+        <version>${spring-boot.version}</version>
+      </plugin>
+
       <plugin>
         <groupId>org.jetbrains.kotlin</groupId>
         <artifactId>kotlin-maven-plugin</artifactId>

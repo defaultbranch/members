@@ -10,3 +10,11 @@ In addition, the project should use:
 - JUnit5
 
 To accomplish this, there should be a `pom.xml`.
+
+# Smoke Testing
+
+If there are no source files yet, please add:
+
+- a `HelloWorld.kt` HTTP GET endpoint controller that returns a text string "Hello, world!"
+- a `Main.kt` for running the Spring Boot application with the controller
+- a `HelloWorldTest.kt` that uses Kotlin test with the chosen JUnit underneath
