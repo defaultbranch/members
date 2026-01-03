@@ -18,3 +18,8 @@ If there are no source files yet, please add:
 - a `HelloWorld.kt` HTTP GET endpoint controller that returns a text string "Hello, world!"
 - a `Main.kt` for running the Spring Boot application with the controller
 - a `HelloWorldTest.kt` that uses Kotlin test with the chosen JUnit underneath
+
+And ensure:
+
+- `mvn verify` passes
+- the resulting JAR is executable
