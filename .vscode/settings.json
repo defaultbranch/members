@@ -1,0 +1,7 @@
+{
+  "files.trimFinalNewlines": true,
+  "files.insertFinalNewline": true,
+  "files.eol": "\n",
+  "files.trimTrailingWhitespace": true,
+  "files.encoding": "utf8"
+}
